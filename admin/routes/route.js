@@ -3,6 +3,9 @@ var express = require('express');
 var admin = require('../controllers/admin');
 var router = express.Router();
 
-router.post('/brigadas', admin.brigadas)
+router.post('/crearPeriodo', admin.brigadas);
+router.get('/obtenerBrigadas', admin.obtenerBrigadas);
+router.get('/usuarios', admin.obtenerUsuarios);
+router.get('/verTarea', admin.obtenerTarea);
 
 module.exports = router;

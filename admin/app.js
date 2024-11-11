@@ -1,5 +1,3 @@
-'use strict'
-//app.js
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -7,20 +5,15 @@ const bodyParser = require('body-parser');
 const app = express();
 const routes = require('./routes/route');
 
+// Usa el middleware de CORS
 app.use(cors());
-app.options('*', cors());
+app.options('*', cors()); // Esto es necesario para manejar las peticiones OPTIONS
 
+// Configuración de body-parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-    res.header('Access-Control-Allow-Methods', 'PATCH, POST, GET, PUT, DELETE, OPTIONS');
-    res.header('Allow', 'PATCH, POST, GET, PUT, DELETE, OPTIONS');
-    next();
-});
-
+// Rutas
 app.use('', routes);
 
 module.exports = app;
