@@ -1,0 +1,17 @@
+{
+  "name": "estado",
+  "version": "1.0.0",
+  "description": "estadotareas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "Gustavo Venegas",
+  "license": "ISC",
+  "dependencies": {
+    "estado": "file:",
+    "mongodb": "^6.11.0",
+    "node-cron": "^3.0.3"
+  }
+}
